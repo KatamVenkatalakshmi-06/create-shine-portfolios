@@ -40,7 +40,8 @@ export const Route = createFileRoute("/projects/$slug")({
 });
 
 function ProjectDetail() {
-  const { project } = Route.useLoaderData();
+  const { slug } = Route.useParams();
+  const project = getProject(slug)!;
   const others = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
 
   return (
