@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ArrowLeft, Calendar, CheckCircle2, ExternalLink, Github, User } from "lucide-react";
 import { getProject, projects } from "@/data/projects";
 
-export const Route = createFileRoute("/projects/$slug")({
+export const Route = createFileRoute("/projects_/$slug")({
   loader: ({ params }) => {
     const project = getProject(params.slug);
     if (!project) throw notFound();
